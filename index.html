@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VEX Autonomous Planner</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/styles/color-brewer.css" rel="stylesheet" type="text/css" />
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+        <link href="css/index.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				VEX Autonomous Planner
+			</div>
+			<div class="tabs">
+				<div class="tab selected" data-panel="config">Configuration</div>
+				<div class="tab" data-panel="keyframes">Keyframes</div>
+				<div class="tab" data-panel="export-code">Code</div>
+				<div class="tab" data-panel="about"><img style="height:1.2rem;" src="images/icons/about_white.png" /></div>
+			</div>
+		</div>
+		<div class="tab-panel" id="config">
+			<div class="config-left-column">
+				<h2>Components</h2>
+				<div class="config-components">	
+				</div>
+			</div>
+			<div class="config-right-column">
+				<div class="config-toolbar">
+					<button class="toolbar-button new-component"><img class="icon" src="images/icons/new.png" /> New Component</button>
+					<button class="toolbar-button error delete-component" disabled><img class="icon" src="images/icons/discard.png" /> Delete Component</button>
+					<span class="toolbar-separater">|</span>
+					<button class="toolbar-button export-configuration"><img class="icon" src="images/icons/share.png" /> Export</button>
+					<button class="toolbar-button import-configuration"><img class="icon" src="images/icons/collection.png" /> Import</button>
+				</div>
+				<div class="config-component-settings">
+					<input type="text" class="input-text config-component-name" placeholder="Component Name" />
+					<div class="config-component-types">
+						<div class="config-component-type selected">Drive</div>
+						<div class="config-component-type">Lift</div>
+						<div class="config-component-type">Pneumatic</div>
+						<div class="config-component-type">Other</div>
+					</div>
+					<div class="config-component-pane 0">
+						<h3>Motors</h3>
+						<h4>Left</h4>
+						<div class="options" style="padding-left:1rem;" data-type="motor" id="config-component-drive-motor-left">
+							<div class="options-box"></div>
+							<button class="options-button" data-box="config-component-drive-motor-left"><img class="icon" src="images/icons/new.png" /></button>
+						</div>
+						<h4>Right</h4>
+						<div class="options" style="padding-left:1rem;" data-type="motor" id="config-component-drive-motor-right">
+						    <div class="options-box"></div>
+							<button class="options-button" data-box="config-component-drive-motor-left"><img class="icon" src="images/icons/new.png" /></button>
+						</div>
+						<h3>Encoders</h3>
+						<h4>Left</h4>
+						<select id="config-component-drive-encoder-left" style="margin-left:1.25rem;">
+							<option value="0">Digital 1</option>
+							<option value="1">Digital 2</option>
+							<option value="2">Digital 3</option>
+							<option value="3">Digital 4</option>
+							<option value="4">Digital 5</option>
+							<option value="5">Digital 6</option>
+							<option value="6">Digital 7</option>
+							<option value="7">Digital 8</option>
+							<option value="8">Digital 9</option>
+							<option value="9">Digital 10</option>
+							<option value="10">Digital 11</option>
+							<option value="11">Digital 12</option>
+							<option value="12">port1</option>
+							<option value="13">port2</option>
+							<option value="14">port3</option>
+							<option value="15">port4</option>
+							<option value="16">port5</option>
+							<option value="17">port6</option>
+							<option value="18">port7</option>
+							<option value="19">port8</option>
+							<option value="20">port9</option>
+							<option value="21">port10</option>
+						</select>
+						<h4>Right</h4>
+						<select id="config-component-drive-encoder-right" style="margin-left:1.25rem;">
+                            <option value="0">Digital 1</option>
+                            <option value="1">Digital 2</option>
+                            <option value="2">Digital 3</option>
+                            <option value="3">Digital 4</option>
+                            <option value="4">Digital 5</option>
+                            <option value="5">Digital 6</option>
+                            <option value="6">Digital 7</option>
+                            <option value="7">Digital 8</option>
+                            <option value="8">Digital 9</option>
+                            <option value="9">Digital 10</option>
+                            <option value="10">Digital 11</option>
+                            <option value="11">Digital 12</option>
+                            <option value="12">port1</option>
+                            <option value="13">port2</option>
+                            <option value="14">port3</option>
+                            <option value="15">port4</option>
+                            <option value="16">port5</option>
+                            <option value="17">port6</option>
+                            <option value="18">port7</option>
+                            <option value="19">port8</option>
+                            <option value="20">port9</option>
+                            <option value="21">port10</option>
+						<select>
+					</div>
+					<div class="config-component-pane 1">
+                        <h3>Motors</h3>
+                        <div class="options" style="padding-left:1rem;" data-type="motor" id="config-component-lift-motor">
+                            <div class="options-box"></div>
+                            <button class="options-button" data-box="config-component-lift-motor"><img class="icon" src="images/icons/new.png" /></button>
+                        </div>
+                        <h3>Encoder</h3>
+                        <select id="config-component-lift-encoder" style="margin-left:1.25rem;">
+                            <option value="0">Analog 1</option>
+                            <option value="1">Analog 2</option>
+                            <option value="2">Analog 3</option>
+                            <option value="3">Analog 4</option>
+                            <option value="4">Analog 5</option>
+                            <option value="5">Analog 6</option>
+                            <option value="6">Analog 7</option>
+                            <option value="7">Analog 8</option>
+                            <option value="8">Digital 1</option>
+                            <option value="9">Digital 2</option>
+                            <option value="10">Digital 3</option>
+                            <option value="11">Digital 4</option>
+                            <option value="12">Digital 5</option>
+                            <option value="13">Digital 6</option>
+                            <option value="14">Digital 7</option>
+                            <option value="15">Digital 8</option>
+                            <option value="16">Digital 9</option>
+                            <option value="17">Digital 10</option>
+                            <option value="18">Digital 11</option>
+                            <option value="19">Digital 12</option>
+                            <option value="20">port1</option>
+                            <option value="21">port2</option>
+                            <option value="22">port3</option>
+                            <option value="23">port4</option>
+                            <option value="24">port5</option>
+                            <option value="25">port6</option>
+                            <option value="26">port7</option>
+                            <option value="27">port8</option>
+                            <option value="28">port9</option>
+                            <option value="29">port10</option>
+                        </select>
+					</div>
+					<div class="config-component-pane 2">
+                        <h3>Digital Sensor Ports</h3>
+                        <div class="options" style="padding-left:1rem;" data-type="digitalsensor" id="config-component-pneumatic-port">
+                            <div class="options-box"></div>
+                            <button class="options-button" data-box="config-component-pneumatic-port"><img class="icon" src="images/icons/new.png" /></button>
+                        </div>
+					</div>
+					<div class="config-component-pane 3">
+                        <h3>Other Motors</h3>
+                        <div class="options" style="padding-left:1rem;" data-type="motor" id="config-component-other-motor">
+                            <div class="options-box"></div>
+                            <button class="options-button" data-box="config-component-other-motor"><img class="icon" src="images/icons/new.png" /></button>
+                        </div>
+					</div>
+				</div>
+				<div class="config-component-blank">
+					<span>Select a component or create a new component</span>
+				</div>
+			</div>
+		</div>
+		<div class="tab-panel" id="keyframes">
+			<div class="keyframes-no-drive">
+				<span>Create a drive component in the configuration tab</span>
+			</div>
+			<div class="keyframes-left-overlay">
+			</div>
+			<div class="keyframes-right-overlay">
+				<h2>Components</h2>
+				<div class="keyframes-components">
+				</div>
+			</div>
+			<div class="keyframes-left-column">
+				<h2>Keyframes</h2>
+				<div class="keyframes-frames">
+				</div>
+			</div>
+			<div class="keyframes-middle-column">
+                <div class="keyframes-toolbar">
+					<button class="toolbar-button new-keyframe"><img class="icon" src="images/icons/new.png" /> New Frame</button>
+					<button class="toolbar-button error delete-keyframe" disabled><img class="icon" src="images/icons/discard.png" /> Delete Frame</button>
+					<span class="toolbar-separater">|</span>
+					<button class="toolbar-button export-autonomous"><img class="icon" src="images/icons/share.png" /> Export</button>
+					<button class="toolbar-button import-autonomous"><img class="icon" src="images/icons/collection.png" /> Import</button>
+					<span class="toolbar-separater">|</span>
+					<button class="toolbar-button play-autonomous"><img class="icon" src="images/icons/play.png" /></button>
+                </div>
+			</div>
+			<div class="keyframes-field-wrapper">
+				<div class="keyframes-field">
+					<div class="keyframes-field-inner">
+						<div class="keyframes-field-overlay"></div>
+						<div class="keyframes-field-tiles"></div>
+					</div>
+				</div>
+			</div>
+			<div class="keyframes-right-column">
+				<h2>Properties</h2>
+				<div class="keyframes-properties-pane" id="init">
+					<h3>Starting Position</h3>
+					<div style="padding:1rem;">
+						<select id="keyframes-init-start">
+							<option value="1">Red Driver Side</option>
+							<option value="2">Red Non-Driver Side</option>
+							<option value="3">Blue Driver Side</option>
+							<option value="4">Blue Non-Driver Side</option>
+						</select>
+					</div>
+					<h3>Rotation</h3>
+					<div style="padding:1rem;"><input type="text" class="input-text keyframes-init-rotation" placeholder="Degrees" /></div>
+					<h3>Offset</h3>
+					<div style="padding:1rem;padding-top:0;">
+						<h4>X-Offset</h4>
+						<input type="text" class="input-text keyframes-init-xoffset" placeholder="X" />
+						<h4>Y-Offset</h4>
+						<input type="text" class="input-text keyframes-init-yoffset" placeholder="Y" />
+					</div>
+					<h3>Lift</h3>
+					<div class="keyframes-init-lift" style="padding:1rem;padding-top:0;"></div>
+					<h3>Pneumatics</h3>
+					<div class="keyframes-init-pneumatics" style="padding:1rem;padding-top:0;"></div>
+				</div>
+				<div class="keyframes-properties-pane" id="pid">
+					<h3>Action Type</h3>
+					<div style="padding:1rem;">
+						<select id="keyframes-pid-type">
+							<option value="pid">PID</option>
+							<option value="time">Time</option>
+						</select>
+					</div>
+					<h3>Target</h3>
+					<div style="padding:1rem;">
+						<select id="keyframes-pid-target"></select>
+					</div>
+					<div class="keyframes-pid-drive">
+						<h3>Action</h3>
+						<div style="padding:1rem;">
+							<select id="keyframes-pid-action">
+								<option value="drive">Drive</option>
+								<option value="turn">Turn</option>
+							</select>
+						</div>
+					</div>
+					<h3>Value</h3>
+					<div style="padding:1rem;">
+						<input type="text" class="input-text keyframes-pid-value" placeholder="Value" />
+					</div>
+				</div>
+				<div class="keyframes-properties-pane" id="time">
+					<h3>Action Type</h3>
+					<div style="padding:1rem;">
+					    <select id="keyframes-time-type">
+						    <option value="pid">PID</option>
+							<option value="time">Time</option>
+						</select>
+					</div>
+					<h3>Target</h3>
+					<div style="padding:1rem;">
+						<select id="keyframes-time-target"></select>
+					</div>
+					<h3 class="keyframes-time-value-header">Value</h3>
+					<div style="padding:1rem;" class="keyframes-time-value-header">
+						<div class="keyframes-time-pneumatics">
+							<select id="keyframes-time-pneumatics-value">
+								<option value="0">Off</option>
+								<option value="1">On</option>
+							</select>
+						</div>
+						<div class="keyframes-time-other">
+							<input type="text" class="input-text keyframes-time-other-value" placeholder="Value" />
+						</div>
+					</div>
+					<h3>Time</h3>
+					<div style="padding:1rem;">
+						<input type="text" class="input-text keyframes-time-time" placeholder="Time" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-panel" id="export-code">
+			<div class="code-blank-pane">
+				<span>Create a drive component and at least one keyframe</span>
+			</div>
+			<div class="code-toolbar">
+				<button class="toolbar-button success donate-button"><img class="icon" src="images/icons/money.png" /> Donate</button>
+				<span class="toolbar-separater donate-text" style="font-weight:300;font-size:0.9rem;color:#666666;">Support a poor college student!</span>
+			</div>
+			<div class="code-export-pane">
+				<div id="code-export-text" contenteditable></div>
+			</div>
+		</div>
+		<div class="tab-panel" id="about">
+			<div class="about-box">
+				<h3><font color="#2097CF">VEX Autonomous Planner</font></h3>
+				<br />
+				Copyright <a href="http://www.ruiqimao.com" target="_blank">Ruiqi Mao</a> 2014
+				<br />
+				<br />
+				Edited by Griffin Tabor and now maintained + edited by <a href="http://www.dvhsrobotics.com/5776e.html" target="_blank">Sid Prabhakaran</a>.
+				<br />
+				<br />
+				All Rights Reserved
+			</div>
+		</div>
+		<div class="toast">Message</div>
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  			ga('create', 'UA-58221751-1', 'auto');
+  			ga('send', 'pageview');
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/highlight.pack.js"></script>
+        <script src="js/main.js"></script>
+		<script src="js/parser.js"></script>		
+	</body>
+</html>
